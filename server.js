@@ -10,7 +10,7 @@ var mongoose = require('mongoose');
 
 app.post('/',function(req,res) {
 	//console.log(req.body);
-	var restaurantSchema = require('./models/restaurant');
+	var restaurantSchema = require('./restaurant');
 	mongoose.connect('mongodb://localhost/test');
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
@@ -44,7 +44,7 @@ app.post('/',function(req,res) {
 });
 
 app.delete('/restaurant_id/:id',function(req,res) {
-	var restaurantSchema = require('./models/restaurant');
+	var restaurantSchema = require('./restaurant');
 	mongoose.connect('mongodb://localhost/test');
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
@@ -63,7 +63,7 @@ app.delete('/restaurant_id/:id',function(req,res) {
 });
 
 app.get('/restaurant_id/:id', function(req,res) {
-	var restaurantSchema = require('./models/restaurant');
+	var restaurantSchema = require('./restaurant');
 	mongoose.connect('mongodb://localhost/test');
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
